@@ -32,15 +32,12 @@ public class SimulationPanel extends JPanel implements MouseListener {
     public SimulationPanel () {
         super();
         this.addMouseListener(this);
-        Timer timer = new Timer(10, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                for (Ray ray : rays) {
-                    ray.setAngle(ControlPanel.coefficient.getValue());
-                    //System.out.println("elo");
-                }
-                repaint();
+        Timer timer = new Timer(10, e -> {
+            for (Ray ray : rays) {
+                ray.setAngle(ControlPanel.coefficient.getValue());
+                //System.out.println("elo");
             }
+            repaint();
         });
         timer.start();
     }
@@ -95,7 +92,7 @@ public class SimulationPanel extends JPanel implements MouseListener {
         rays.clear();
         circles.clear();
         option = 0;
-        //System.out.println("\n\n\n\n\n\n\n~CLEAR!~\n\n\n");
+        System.out.println("\n\n\n\n\n\n\n~CLEAR!~\n\n\n");
     }
 
     public Point2D addPoint2D() {
@@ -282,7 +279,8 @@ public class SimulationPanel extends JPanel implements MouseListener {
     public void pointToLine() {
         System.out.println("-----------------------------");
         Line line = addLine();
-        new Operation().whichSide(addPoint2D(), line);
+        new Operation();
+        Operation.whichSide(addPoint2D(), line);
     }
 
     public void pointToTriangle() {
