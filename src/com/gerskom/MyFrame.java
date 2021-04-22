@@ -16,7 +16,9 @@ public class MyFrame extends JFrame {
 
         ImageIcon icon = new ImageIcon("triangle.png");
 
-        this.setSize(1000, 700);
+        int width = 1280;
+        int height = 720;
+        this.setSize(width, height);
         this.setTitle("Point In Relation To Stuff");
         this.getContentPane().setBackground(Color.DARK_GRAY);
         this.setLocationRelativeTo(null);

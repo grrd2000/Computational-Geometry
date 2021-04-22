@@ -24,8 +24,8 @@ public class SimulationPanel extends JPanel implements MouseListener {
 
     int option = 0;
 
-    static public int panelX = 650;
-    static public int panelY = 540;
+    static public int panelX = 930;
+    static public int panelY = 625;
 
     int minLineSegmentLength = 550;
 
@@ -35,7 +35,6 @@ public class SimulationPanel extends JPanel implements MouseListener {
         Timer timer = new Timer(10, e -> {
             for (Ray ray : rays) {
                 ray.setAngle(ControlPanel.coefficient.getValue());
-                //System.out.println("elo");
             }
             repaint();
         });
