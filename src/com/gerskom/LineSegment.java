@@ -11,7 +11,7 @@ public class LineSegment {
         this.p2 = p2;
     }
 
-    public LineSegment(){}
+    //public LineSegment(){}
 
     public void paintComponent (Graphics g) {
 

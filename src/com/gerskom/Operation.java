@@ -8,21 +8,21 @@ public class Operation {
 
     static float tolerance = 2.5f;
 
-    public boolean PointAffiliation(Point2D p, Line l) {
+    /*public boolean PointAffiliation(Point2D p, Line l) {
 
         double eq = (-l.a * p.x) + p.y + (-l.b);
 
         return eq > -tolerance && eq < tolerance;
-    }
+    }*/
 
-    static Line lineTranslation(Vector2D v, Line l) {
+    /*static Line lineTranslation(Vector2D v, Line l) {
 
         l.b = l.a * -v.x + l.b + v.y;
 
         return l;
-    }
+    }*/
 
-    public Point2D PointTranslation(Vector2D v, Point2D point2D) {
+    /*public Point2D PointTranslation(Vector2D v, Point2D point2D) {
 
         point2D.x += v.x;
         point2D.y += v.y;
@@ -49,11 +49,11 @@ public class Operation {
             case 3 -> new Point2D(-p.x, -p.y);    //względem początku układu współrzędnych
             default -> p;
         };
-    }
+    }*/
 
     static int onLeft(Point2D p1, Point2D p2, Point2D p3) {
-        int isLeft = 0;
 
+        int isLeft = 0;
         double eq = (p3.x - p2.x) * (p1.y - p2.y) - (p1.x - p2.x) * (p3.y - p2.y);
 
         if (eq > 0)
@@ -62,23 +62,19 @@ public class Operation {
         if (eq <= 0)
             isLeft = 1;
 
-
         return isLeft;
     }
 
-    public static int whichSide(Point2D p, Line l) {
+    public static void whichSide(Point2D p, Line l) {
 
         double eq = (-l.a * p.x) + p.y + (-l.b);
 
         if (eq > tolerance) {
             System.out.println("The point is on the right.");
-            return 2;
         } else if (eq < -tolerance) {
             System.out.println("The point is on the left.");
-            return 1;
         } else {
             System.out.println("The point is on the line.");
-            return 0;
         }
     }
 
@@ -219,7 +215,7 @@ public class Operation {
                 }
             }
             convexPoints.add(rightest);
-            int i = 0, c;
+            int i = 0;
             Random rand = new Random(System.currentTimeMillis());
             Point2D nextPoint;
 
