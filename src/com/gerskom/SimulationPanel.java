@@ -2,8 +2,6 @@ package com.gerskom;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -25,7 +23,7 @@ public class SimulationPanel extends JPanel implements MouseListener {
     int option = 0;
 
     static public int panelX = 930;
-    static public int panelY = 625;
+    static public int panelY = 620;
 
     int minLineSegmentLength = 550;
 
@@ -99,7 +97,7 @@ public class SimulationPanel extends JPanel implements MouseListener {
         Point2D point2D = new Point2D();
         //Point2D point2D = new Point2D(150,150);
         points.add(point2D);
-        //point2D.print();
+        point2D.print();
         return point2D;
     }
 

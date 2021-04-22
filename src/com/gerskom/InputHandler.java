@@ -37,7 +37,7 @@ public class InputHandler implements ActionListener, ChangeListener {
         }*/
 
         if(e.getSource() == ControlPanel.pointAdder) {
-            System.out.print("Point added!  ");
+            //System.out.println("Point added!");
             simulationPanel.addPoint2D();
             simulationPanel.repaint();
         }
@@ -98,7 +98,7 @@ public class InputHandler implements ActionListener, ChangeListener {
         SimulationPanel.rays.clear();
         SimulationPanel.foundPoints.clear();
         System.out.println("-----------------------------");
-        if(Operation.isInsidePolygon(simulationPanel.polygons.get(0), SimulationPanel.points.get(SimulationPanel.points.size() - 1), angle)) {
+        if(Operation.isInsidePolygon(SimulationPanel.polygons.get(0), SimulationPanel.points.get(SimulationPanel.points.size() - 1), angle)) {
             System.out.println("~INSIDE~");
         }
         else System.out.println("~OUTSIDE~");

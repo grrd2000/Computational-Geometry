@@ -250,8 +250,12 @@ public class Operation {
 
             } while ((nextPoint.x != convexPoints.get(0).x && nextPoint.y != convexPoints.get(0).y));
 
-            for (int l = 0; l < convexPoints.size(); l+=2) {
-                convexPoints.get(l).print();
+            for (int l = 0; l < convexPoints.size(); l++) {
+                if(l > 0) {
+                    if (convexPoints.get(l).x != convexPoints.get(l - 1).x && convexPoints.get(l).y != convexPoints.get(l - 1).y) {
+                        convexPoints.get(l).print();
+                    }
+                }
             }
         } else System.err.println("Not enough points!");
     }

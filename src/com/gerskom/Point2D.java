@@ -12,8 +12,8 @@ public class Point2D {
     }
 
     public Point2D() {
-        this.x = (float)Math.random() * SimulationPanel.panelX;
-        this.y = (float)Math.random() * SimulationPanel.panelY;
+        this.x = (int)(Math.random() * SimulationPanel.panelX);
+        this.y = (int)(Math.random() * SimulationPanel.panelY);
     }
 
     public void print() {
