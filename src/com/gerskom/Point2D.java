@@ -3,6 +3,7 @@ package com.gerskom;
 import java.awt.*;
 
 public class Point2D {
+
     float x;
     float y;
 
