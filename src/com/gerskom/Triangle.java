@@ -8,6 +8,12 @@ public class Triangle {
     Point2D B;
     Point2D C;
 
+    public Triangle() {
+        this.A = new Point2D();
+        this.B = new Point2D();
+        this.C = new Point2D();
+    }
+
     public Triangle(Point2D a, Point2D b, Point2D c) {
         this.A = a;
         this.B = b;
@@ -20,12 +26,13 @@ public class Triangle {
         this.C = triangle.C;
     }
 
-    public double Area(Vector2D v1, Vector2D v2) {
-        return Math.abs(0.5 * (v1.x * v2.y - v2.x * v1.y));
+    public float Area(Vector2D v1, Vector2D v2) {
+        return (float)(Math.abs(0.5 * (v1.x * v2.y - v2.x * v1.y)));
     }
 
-    public double Area() {
-        return Math.abs(0.5 * ((B.x - A.x) * (C.y - A.y) - (C.x - A.x) * (B.y - A.y)));
+    public float Area() {
+
+        return (float)(Math.abs(0.5 * ((B.x - A.x) * (C.y - A.y) - (C.x - A.x) * (B.y - A.y))));
     }
 
     /*public void printArea() {

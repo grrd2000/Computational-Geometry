@@ -77,6 +77,12 @@ public class InputHandler implements ActionListener, ChangeListener {
             simulationPanel.repaint();
         }
 
+        if(e.getSource() == ControlPanel.triangleAdder) {
+            simulationPanel.clearPanel();
+            simulationPanel.triangleArea();
+            simulationPanel.repaint();
+        }
+
         if(e.getSource() == ControlPanel.pointToPolygonRelation) {
             option = 1;
             simulationPanel.clearPanel();
@@ -116,16 +122,14 @@ public class InputHandler implements ActionListener, ChangeListener {
 
         SimulationPanel.rays.clear();
         SimulationPanel.foundPoints.clear();
-        //System.out.println("-----------------------------");
+        System.out.println("-----------------------------");
         //System.out.println(option);
         if(option == 1) {
             if (Operation.isInsidePolygon(SimulationPanel.polygons.get(0), SimulationPanel.points.get(SimulationPanel.points.size() - 1), angle)) {
-                System.out.print("\n~INSIDE~ ->");
-                SimulationPanel.points.get(SimulationPanel.points.size() - 1).print();
+                System.out.println("~INSIDE~");
 
             } else {
-                System.out.print("\n~OUTSIDE~ -> ");
-                SimulationPanel.points.get(SimulationPanel.points.size() - 1).print();
+                System.out.println("~OUTSIDE~");
             }
         }
         else if(option == 2) {

@@ -179,20 +179,18 @@ public class SimulationPanel extends JPanel implements MouseListener {
     }
 
     public void addLineFromTwoRandomPoints() {
-
+        System.out.println("-----------------------------");
         Point2D p1 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
         Point2D p2 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
 
         Line line = new Line(p1, p2);
         lines.add(line);
         points.add(p1); points.add(p2);
-        System.out.println();
         p1.print();     p2.print();
         line.print();
     }
 
     public Line addLine() {
-
         Point2D p1 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
         Point2D p2 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
         //Point2D p1 = new Point2D(0,0);
@@ -287,18 +285,15 @@ public class SimulationPanel extends JPanel implements MouseListener {
     }
 
     public void twoLinesIntersection() {
-        System.out.println();
-
+        System.out.println("-----------------------------");
         Line line1 = addLine();
         Line line2 = addLine();
-
         addPoint2D(Operation.crossingPointCramer(line1, line2)).print();
     }
 
     public void pointToLine() {
         System.out.println("-----------------------------");
         Line line = addLine();
-        new Operation();
         Operation.whichSide(addPoint2D(), line);
     }
 
@@ -308,6 +303,12 @@ public class SimulationPanel extends JPanel implements MouseListener {
         if(new Operation().isInsideTriangle(triangle, addPoint2D()))
             System.out.println("This point is inside the triangle.");
         else System.out.println("This point isn't inside of the triangle.");
+    }
+
+    public void triangleArea() {
+        System.out.println("-----------------------------");
+        Triangle triangle = new Triangle(addTriangle());
+        System.out.println("Area of the triangle:\t" + triangle.Area());
     }
 
     public void pointToPolygon() {

@@ -56,11 +56,9 @@ public class Operation {
         int isLeft = 0;
         double eq = (p3.x - p2.x) * (p1.y - p2.y) - (p1.x - p2.x) * (p3.y - p2.y);
 
-        if (eq > 0)
-            isLeft = 2;
+        if (eq > 0) isLeft = 2;
 
-        if (eq <= 0)
-            isLeft = 1;
+        if (eq <= 0) isLeft = 1;
 
         return isLeft;
     }

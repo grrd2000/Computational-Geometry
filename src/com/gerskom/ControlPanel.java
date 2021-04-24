@@ -8,10 +8,10 @@ public class ControlPanel extends JPanel{
     static JButton rayRotation;
     static JButton linesIntersection;
     static JButton lineAdder;
+    static JButton triangleAdder;
 
     static JButton pointAdder;
     static JButton pointRemover;
-    static JButton triangleAdder;
 
     static JButton clearButton;
 
@@ -117,6 +117,15 @@ public class ControlPanel extends JPanel{
         pointToTriangleRelation = new JButton("Point in relation to a triangle");
         pointToTriangleRelation.addActionListener(new InputHandler(simPanel));
         this.add(pointToTriangleRelation, gbc);
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady = 8;      gbc.ipadx = 0;
+        gbc.gridx = 0;      gbc.gridy++;
+        gbc.weighty = 0;  gbc.weightx = 0;
+        gbc.gridwidth = 2;
+        triangleAdder = new JButton("Calculate area of the triangle");
+        triangleAdder.addActionListener(new InputHandler(simPanel));
+        this.add(triangleAdder, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 8;      gbc.ipadx = 0;
