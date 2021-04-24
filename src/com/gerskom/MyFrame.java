@@ -38,7 +38,7 @@ public class MyFrame extends JFrame {
 
         northPanel.setPreferredSize(new Dimension(100,30));
         westPanel.setPreferredSize(new Dimension(15,100));
-        eastPanel.setPreferredSize(new Dimension(275,100));
+        eastPanel.setPreferredSize(new Dimension(280,100));
         southPanel.setPreferredSize(new Dimension(100,30));
         centerPanel.setPreferredSize(new Dimension(100,100));
 

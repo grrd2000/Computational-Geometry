@@ -85,7 +85,7 @@ public class Operation {
         return !(eq > tolerance) && !(eq < -tolerance);
     }
 
-    static Point2D crossingPointCramer(Line l1, Line l2) {
+    public static Point2D crossingPointCramer(Line l1, Line l2) {
 
         float W = (-l1.a * 1) - (-l2.a * 1);
 

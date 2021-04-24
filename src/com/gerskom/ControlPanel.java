@@ -5,10 +5,12 @@ import java.awt.*;
 
 public class ControlPanel extends JPanel{
 
-    static JButton pointAdder;
+    static JButton rayRotation;
+    static JButton linesIntersection;
     static JButton lineAdder;
+
+    static JButton pointAdder;
     static JButton pointRemover;
-    static JButton lineSegmentRemover;
     static JButton triangleAdder;
 
     static JButton clearButton;
@@ -61,6 +63,33 @@ public class ControlPanel extends JPanel{
         lineSegmentRemover = new JButton("Remove a Line");
         lineSegmentRemover.addActionListener(new InputHandler(simPanel));
         this.add(lineSegmentRemover, gbc);*/
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady = 8;      gbc.ipadx = 0;
+        gbc.gridx = 0;      gbc.gridy++;
+        gbc.gridwidth = 2;
+        gbc.weighty = 0;  gbc.weightx = 0;
+        rayRotation = new JButton("Rotation of the ray");
+        rayRotation.addActionListener(new InputHandler(simPanel));
+        this.add(rayRotation, gbc);
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady = 8;      gbc.ipadx = 0;
+        gbc.gridx = 0;      gbc.gridy++;
+        gbc.gridwidth = 2;
+        gbc.weighty = 0;  gbc.weightx = 0;
+        linesIntersection = new JButton("Intersection of random lines");
+        linesIntersection.addActionListener(new InputHandler(simPanel));
+        this.add(linesIntersection, gbc);
+
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.ipady = 8;      gbc.ipadx = 0;
+        gbc.gridx = 0;      gbc.gridy++;
+        gbc.gridwidth = 2;
+        gbc.weighty = 0;  gbc.weightx = 0;
+        lineAdder = new JButton("Line from two random points");
+        lineAdder.addActionListener(new InputHandler(simPanel));
+        this.add(lineAdder, gbc);
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 8;      gbc.ipadx = 0;

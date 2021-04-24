@@ -99,10 +99,11 @@ public class SimulationPanel extends JPanel implements MouseListener {
         return point2D;
     }
 
-    public static void addPoint2D(Point2D point2D) {
+    public static Point2D addPoint2D(Point2D point2D) {
 
         points.add(point2D);
-        point2D.print();
+        //point2D.print();
+        return point2D;
     }
 
     static void removePoint2D() {
@@ -166,15 +167,28 @@ public class SimulationPanel extends JPanel implements MouseListener {
     public static LineSegment addLineSegment(LineSegment lineSegment) {
 
         lineSegments.add(lineSegment);
-        //System.out.print("A:\t");
-        //lineSegment.p1.print();
-        //addPoint2D(lineSegment.p1);
-        //System.out.print("B:\t");
-        //lineSegment.p2.print();
-        //System.out.println("-");
-        //addPoint2D(lineSegment.p2);
-
         return lineSegment;
+    }
+
+    public static void addLineSegment() {
+
+        LineSegment lineSegment = new LineSegment();
+        lineSegments.add(lineSegment);
+        addPoint2D(lineSegment.p1);
+        addPoint2D(lineSegment.p2);
+    }
+
+    public void addLineFromTwoRandomPoints() {
+
+        Point2D p1 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
+        Point2D p2 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
+
+        Line line = new Line(p1, p2);
+        lines.add(line);
+        points.add(p1); points.add(p2);
+        System.out.println();
+        p1.print();     p2.print();
+        line.print();
     }
 
     public Line addLine() {
@@ -209,12 +223,12 @@ public class SimulationPanel extends JPanel implements MouseListener {
         return line;
     }*/
 
-    /*static Ray addRay(Point2D p1) {
+    /*public Ray addRay() {
 
         //Point2D p2 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
-        //Point2D p2 = new Point2D(500,500);
+        Point2D p2 = new Point2D((float)panelX/2,(float)panelY/2);
 
-        Ray ray = new Ray(p1, 0);
+        Ray ray = new Ray(p2, 0);
         rays.add(ray);
         return ray;
     }*/
@@ -270,6 +284,15 @@ public class SimulationPanel extends JPanel implements MouseListener {
         circle.print();
 
         return circle;
+    }
+
+    public void twoLinesIntersection() {
+        System.out.println();
+
+        Line line1 = addLine();
+        Line line2 = addLine();
+
+        addPoint2D(Operation.crossingPointCramer(line1, line2)).print();
     }
 
     public void pointToLine() {

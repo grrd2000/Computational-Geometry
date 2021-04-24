@@ -11,7 +11,10 @@ public class LineSegment {
         this.p2 = p2;
     }
 
-    //public LineSegment(){}
+    public LineSegment(){
+        this.p1 = new Point2D();
+        this.p2 = new Point2D();
+    }
 
     public void paintComponent (Graphics g) {
 
