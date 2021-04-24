@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class ControlPanel extends JPanel{
 
+    static JButton convexHull;
+
     static JButton rayRotation;
     static JButton linesIntersection;
     static JButton lineAdder;
@@ -13,24 +15,19 @@ public class ControlPanel extends JPanel{
     static JButton pointAdder;
     static JButton pointRemover;
 
-    static JButton clearButton;
-
     static JButton pointToLineRelation;
     static JButton pointToTriangleRelation;
     static JButton pointToPolygonRelation;
     static JButton pointToCircleRelation;
 
-    static JButton convexHull;
-
     static JSlider coefficient;
+    static JButton clearButton;
 
     ControlPanel(SimulationPanel simPanel) {
 
         super();
         this.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-
-        //gbc.anchor = GridBagConstraints.PAGE_START;
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 8;      gbc.ipadx = 0;
@@ -65,23 +62,6 @@ public class ControlPanel extends JPanel{
         convexHull.setBorderPainted(false);
         convexHull.addActionListener(new InputHandler(simPanel));
         this.add(convexHull, gbc);
-
-
-        /*gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady = 8;      gbc.ipadx = 0;
-        gbc.gridx = 0;      gbc.gridy++;
-        gbc.weighty = 0;  gbc.weightx = 0;
-        lineAdder = new JButton("Add a Random Line");
-        lineAdder.addActionListener(new InputHandler(simPanel));
-        this.add(lineAdder, gbc);
-
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady = 8;      gbc.ipadx = 0;
-        gbc.gridx++;      gbc.gridy = 1;
-        gbc.weighty = 0;  gbc.weightx = 0;
-        lineSegmentRemover = new JButton("Remove a Line");
-        lineSegmentRemover.addActionListener(new InputHandler(simPanel));
-        this.add(lineSegmentRemover, gbc);*/
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 8;      gbc.ipadx = 0;
@@ -146,15 +126,6 @@ public class ControlPanel extends JPanel{
         pointToLineRelation.addActionListener(new InputHandler(simPanel));
         this.add(pointToLineRelation, gbc);
 
-        /*gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady = 8;      gbc.ipadx = 0;
-        gbc.gridx = 0;      gbc.gridy = 3;
-        gbc.weighty = 0;  gbc.weightx = 0;
-        gbc.gridwidth = 1;
-        triangleAdder = new JButton("Add a Random Triangle");
-        triangleAdder.addActionListener(new InputHandler(simPanel));
-        this.add(triangleAdder, gbc);*/
-
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 8;      gbc.ipadx = 0;
         gbc.gridx = 0;      gbc.gridy++;
@@ -205,15 +176,6 @@ public class ControlPanel extends JPanel{
         coefficient.setMajorTickSpacing(89);
         coefficient.addChangeListener(new InputHandler(simPanel));
         this.add(coefficient, gbc);
-
-        /*gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.ipady = 8;      gbc.ipadx = 0;
-        gbc.gridx = 0;      gbc.gridy++;
-        gbc.weighty = 0;  gbc.weightx = 0;
-        gbc.gridwidth = 2;
-        pointToCircleRelation = new JButton("Point in relation to a circle");
-        pointToCircleRelation.addActionListener(new InputHandler(simPanel));
-        this.add(pointToCircleRelation, gbc);*/
 
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 8;      gbc.ipadx = 0;
