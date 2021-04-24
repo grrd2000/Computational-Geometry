@@ -122,9 +122,9 @@ public class InputHandler implements ActionListener, ChangeListener {
 
         SimulationPanel.rays.clear();
         SimulationPanel.foundPoints.clear();
-        System.out.println("-----------------------------");
         //System.out.println(option);
         if(option == 1) {
+            System.out.println("-----------------------------");
             if (Operation.isInsidePolygon(SimulationPanel.polygons.get(0), SimulationPanel.points.get(SimulationPanel.points.size() - 1), angle)) {
                 System.out.println("~INSIDE~");
 
