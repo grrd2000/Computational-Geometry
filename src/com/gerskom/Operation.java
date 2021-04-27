@@ -121,8 +121,6 @@ public class Operation {
 
         double angle = angle1 + angle2 + angle3;
 
-        //System.out.println(angle);
-
         return ((float) angle < 180.0005 && (float) angle > 179.9995)
                 || isOnLine(point2D, new Line(new LineSegment(triangle.A, triangle.B)))
                 || isOnLine(point2D, new Line(new LineSegment(triangle.B, triangle.C)))
@@ -200,14 +198,10 @@ public class Operation {
     }
 
     static void convexHull() {
-
         if (SimulationPanel.points.size() > 2) {
-
             List<Point2D> convexPoints = new ArrayList<>();
             Point2D rightest = SimulationPanel.points.get(0);
-
             for (int i = 1; i < SimulationPanel.points.size(); i++) {
-
                 if (rightest.x < SimulationPanel.points.get(i).x) {
                     rightest = SimulationPanel.points.get(i);
                 }
@@ -216,9 +210,7 @@ public class Operation {
             int i = 0;
             Random rand = new Random(System.currentTimeMillis());
             Point2D nextPoint;
-
             System.out.println("Your convex hull:");
-
             do {
                 nextPoint = SimulationPanel.points.get(i % SimulationPanel.points.size());
 
@@ -234,16 +226,11 @@ public class Operation {
                         nextPoint = SimulationPanel.points.get(j);
                     }
                 }
-
                 convexPoints.add(nextPoint);
-
                 i++;
                 LineSegment newLineSegment = new LineSegment(convexPoints.get(i - 1), convexPoints.get(i));
                 SimulationPanel.addLineSegment(newLineSegment);
-                //newLineSegment.print();
-
             } while ((nextPoint.x != convexPoints.get(0).x && nextPoint.y != convexPoints.get(0).y));
-
             for (int l = 0; l < convexPoints.size(); l++) {
                 if(l > 0) {
                     if (convexPoints.get(l).x != convexPoints.get(l - 1).x && convexPoints.get(l).y != convexPoints.get(l - 1).y) {

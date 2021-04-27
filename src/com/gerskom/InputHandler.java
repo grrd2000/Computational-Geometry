@@ -18,23 +18,6 @@ public class InputHandler implements ActionListener, ChangeListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        /*if(e.getSource() == ControlPanel.lineAdder) {
-            System.out.print("Line added!  ");
-            simulationPanel.addLine();
-            simulationPanel.repaint();
-        }
-
-        if(e.getSource() == ControlPanel.lineSegmentRemover) {
-            simulationPanel.removeLineSegment();
-            simulationPanel.repaint();
-        }
-
-        if(e.getSource() == ControlPanel.triangleAdder) {
-            System.out.println("Triangle added!");
-            simulationPanel.addTriangle();
-            simulationPanel.repaint();
-        }*/
-
         if(e.getSource() == ControlPanel.pointAdder) {
             //System.out.println("Point added!");
             simulationPanel.addPoint2D();
@@ -133,9 +116,12 @@ public class InputHandler implements ActionListener, ChangeListener {
             }
         }
         else if(option == 2) {
-            Point2D middlePoint = new Point2D((float)SimulationPanel.panelX / 2 - 200, (float)SimulationPanel.panelY / 2 - 50);
-            SimulationPanel.addPoint2D(middlePoint);
-            SimulationPanel.addRay(middlePoint, angle);
+            //if(!source.getValueIsAdjusting()) {
+            System.out.println("-----------------------------");
+            Point2D middlePoint = new Point2D((float) SimulationPanel.panelX / 2 - 200, (float) SimulationPanel.panelY / 2 - 50);
+                SimulationPanel.addPoint2D(middlePoint);
+                SimulationPanel.addRay(middlePoint, angle).print();
+           // }
         }
     }
 }

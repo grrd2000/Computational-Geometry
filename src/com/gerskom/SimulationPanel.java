@@ -193,11 +193,8 @@ public class SimulationPanel extends JPanel implements MouseListener {
     public Line addLine() {
         Point2D p1 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
         Point2D p2 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
-        //Point2D p1 = new Point2D(0,0);
-        //Point2D p2 = new Point2D(400,400);
 
         Line line = new Line(p1, p2);
-        //Line line = new Line(2, 0);
         lines.add(line);
         line.print();
         return line;
@@ -208,28 +205,6 @@ public class SimulationPanel extends JPanel implements MouseListener {
         lines.add(line);
         line.print();
     }
-
-    /*public Line addLine(Point2D point2D) {
-
-        Point2D p2 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
-        //Point2D p1 = new Point2D(0,0);
-        //Point2D p2 = new Point2D(400,400);
-
-        Line line = new Line(point2D, p2);
-        //Line line = new Line((float)Math.tan(-135 * Math.PI / 180), 0);
-        lines.add(line);
-        return line;
-    }*/
-
-    /*public Ray addRay() {
-
-        //Point2D p2 = new Point2D((float)Math.random() * panelX, (float)Math.random() * panelY);
-        Point2D p2 = new Point2D((float)panelX/2,(float)panelY/2);
-
-        Ray ray = new Ray(p2, 0);
-        rays.add(ray);
-        return ray;
-    }*/
 
     static Ray addRay(Point2D p1, float angle) {
 

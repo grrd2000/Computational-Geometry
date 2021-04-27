@@ -7,7 +7,7 @@ public class Ray extends Line{
     public int direction;
     public int quarter = 0;
 
-    public Ray(float a, float b) {
+    /*public Ray(float a, float b) {
         super(a, b);
     }
 
@@ -25,7 +25,7 @@ public class Ray extends Line{
 
     public Ray(Line line, Point2D point2D) {
         super(line, point2D);
-    }
+    }*/
 
     public Ray(Point2D p, float angle) {
         super(p, angle);

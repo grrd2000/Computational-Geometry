@@ -49,7 +49,6 @@ public class Line {
         this.b = p1.y - a * p1.x;
         this.p = p1;
         this.angle = (float)(Math.atan(a * 180 / Math.PI));
-        //System.out.println(angle);
     }
 
     public void print() {
