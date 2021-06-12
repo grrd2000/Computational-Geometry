@@ -12,18 +12,19 @@ public class MyFrame extends JFrame {
     SimulationPanel centerPanel = new SimulationPanel();
     ControlPanel eastPanel = new ControlPanel(centerPanel);
 
+
     MyFrame() {
 
-        ImageIcon icon = new ImageIcon("triangle.png");
+        //ImageIcon icon = new ImageIcon("triangle.png");
 
         int width = 1280;
         int height = 720;
         this.setSize(width, height);
-        this.setTitle("Point In Relation To Stuff");
+        this.setTitle("PKP Controller - admin");
         this.getContentPane().setBackground(Color.DARK_GRAY);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        this.setIconImage(icon.getImage());
+        //this.setIconImage(icon.getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout(20,5));
         this.setVisible(true);
@@ -47,7 +48,5 @@ public class MyFrame extends JFrame {
         this.add(eastPanel, BorderLayout.EAST);
         this.add(southPanel, BorderLayout.SOUTH);
         this.add(centerPanel, BorderLayout.CENTER);
-
-
     }
 }
