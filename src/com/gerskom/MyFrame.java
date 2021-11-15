@@ -15,7 +15,7 @@ public class MyFrame extends JFrame {
 
     MyFrame() {
 
-        //ImageIcon icon = new ImageIcon("triangle.png");
+        ImageIcon icon = new ImageIcon("triangle.png");
 
         int width = 1280;
         int height = 720;
